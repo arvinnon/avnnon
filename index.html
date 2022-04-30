@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat+Subrayada:wght@400;700&family=Montserrat:wght@500;900&family=Orbitron:wght@500&family=Poppins:wght@700&family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat+Subrayada:wght@400;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Orbitron:wght@500&family=Poppins:wght@700&family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@700&family=Michroma&family=Montserrat+Subrayada:wght@400;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Orbitron:wght@500&family=Poppins:wght@700&family=Russo+One&display=swap" rel="stylesheet">
+
+    <!--Icons-->
+    <script src="https://kit.fontawesome.com/f72aa75942.js" crossorigin="anonymous"></script>
+    <title>Arvin Non | Web Portfolio</title>
+    <link rel="icon" href="images/myLogo.png">
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+        
+    }
+    html {
+        scroll-behavior: smooth;
+        background-color: #EBEBEB;
+    }
+    /*Navigation Bar
+    body {
+        font-family: montserrat;
+    }
+    */
+    nav {
+        background: #ebebeb97;
+        height: 60px;
+        width: 100%;
+        position: fixed;
+        overflow: hidden;
+        z-index: 2;
+    }
+    label.logo {
+        color: black;
+        font-size: 35px;
+        line-height: 60px;
+        padding: 0 100px;
+        font-weight: bold;
+    }
+    nav ul {
+        float: right;
+        margin-right: 20px;
+    }
+    nav ul li {
+        display: inline-block;
+        line-height: 60px;
+        margin: 0 5px;
+    }
+    nav ul li a{
+        color: black;
+        font-size: 18px;
+        border-radius: 3px;
+        padding: 7px 13px;
+        text-transform: lowercase;
+    }
+    a:hover{
+      color: orange;
+      transition: .5s;   
+    }
+    .checkbtn{
+        font-size: 30px;
+        color: white;
+        float: right;
+        line-height: 80px;
+        margin-right: 40px;
+        cursor: pointer;
+        display: none;
+    }  
+    #check {
+        display: none;
+    }
+    nav img {
+        width: 100%;
+        height: auto;
+    }
+    @media (max-width: 952px) {
+        label.logo{
+            font-size: 30px;
+            padding-left: 50px;
+        } 
+        nav ul li a {
+            font-size: 16px;
+        }
+    }
+    @media (max-width: 858px) {
+        .checkbtn {
+            display: block;
+        }
+        ul {
+            position:fixed;
+            width: 100%;
+            height: 100vh;
+            background: #2c3e50;
+            top: 80px;
+            left: -100%;
+            text-align: center;
+            transition: all .5s;
+
+        }
+        nav ul li {
+            display: block;
+            margin: 50px 0;
+            line-height: 30px;
+        }
+        nav ul li a {
+            font-size: 20px;
+        }
+        a:hover, a.active{
+            background: none;
+            color: #ffac37;
+        }
+        #check:checked ~ ul {
+            left: 0;
+
+        }
+    }
+    
+    /*Header Page*/
+    .myPage{
+        margin-top: 20%;
+        margin-left: 8%;
+        font-size: 17px;
+        letter-spacing: 1px;
+        line-height: 20px;
+        position: absolute;
+        top: 8px;
+        left: 16px;
+    }
+    .myPage h1 {
+        font-size: 75px;
+        line-height: 160px;
+    }
+    .myPage p { 
+        line-height: 10%;
+        margin-top: 1px;
+        margin-bottom: 30px;
+    }
+    
+    .container {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    }
+
+    /*About Page*/
+    .wrapper{
+        width: 100%;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+    .row {
+        width: 100%;
+        padding: 50px 100px;
+    }
+    .image-section {
+        width: 30%;
+        float: left;
+    }
+    .image-section img {
+        width: 200%;
+        height: auto;
+    }
+    .content {
+        width: 60%;
+        float: left;
+        margin-left: 50px;
+    }
+    .content h1 {
+        font-size: 90px;
+        letter-spacing: 3.5px;
+        margin-top: 100px;
+        margin-left: 200px;
+    }
+    .content h2 {
+        font-style: 40px;
+        font-family: sans-serif;
+        margin-top: 25px;
+    }
+    .content p {
+        font-size: 20px;
+        font-family: serif;
+        margin-top: 100px;
+        margin-left: 250px;
+        line-height: 1.5;
+        text-align: justify;
+        
+    }
+    @media screen and (max-width: 768px ){
+        .image-section{
+            width: 100%;
+            float: none;
+        }
+        .content {
+            width: 100%;
+            float: none;
+            margin-left: 0px;
+        }
+        .content h1 {
+        font-size: 60px;
+        letter-spacing: 2px;
+        margin-top: 30px;
+        }
+        .content h2 {
+        font-style: 30px;
+        }
+         .content p {
+        font-size: 18px;
+        }
+    }
+
+    /*Services Page*/
+    section {
+        height: 100vh;
+        width: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .column {
+        width: 100%;
+        padding: 0 1em 1em 1em;
+        text-align: center;
+    }
+    .card {
+        width: 100%;
+        height: 100%;
+        padding: 2em 1.5em;
+        background: linear-gradient(#ffffff 50%, #f56a00 50%);
+        background-size: 100% 200%;
+        background-position: 0 2.5%;
+        border-radius: 5px;
+        box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+        transition: 0.5s;
+    }
+    h3 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #1f194c;
+        margin: 1em 0;
+    }
+    p {
+        color: #575a7b;
+        font-size: 15px;
+        line-height: 1.6;
+        letter-spacing: 0.03em;
+    }
+    .icon-wrapper {
+        background-color: #000000;
+        position: relative;
+        margin: auto;
+        font-size: 30px;
+        height: 2.5em;
+        width: 2.5em;
+        color: #ffffff;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        transition: 0.5s;
+    }
+    .card:hover {
+        background-position: 0 100%;
+    }
+    .card:hover .icon-wrapper {
+        background-color: #ffffff;
+        color: #000000;
+    }
+    .card:hover h3 {
+        color: #ffffff;
+    }
+    .card:hover p {
+        color: #f0f0f0;
+    }
+    @media screen and (min-width: 768px) {
+        section {
+            padding: 0 2em;
+        }
+        .column {
+            flex: 0 50%;
+            max-width: 50%;
+        }
+    }
+    @media screen and (min-width: 992px) {
+        section {
+            padding: 1em 3em;
+        }
+        .column {
+            flex: 0 0 33.33%;
+            max-width: 33.33%;
+        }
+    }
+
+    /*Skills*/
+    
+    .circular-progress {
+      position: relative;
+      height: 250px;
+      width: 250px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    
+    }
+    .circular-progress:before {
+      content: "";
+      position: absolute;
+      height: 84%;
+      width: 84%;
+      background-color: #EBEBEB;
+      border-radius: 50%;
+    }
+    .value-container {
+      position: relative;
+      font-family: "Poppins", sans-serif;
+      font-size: 50px;
+      color: #000000;
+    }
+
+    .circular-progress1 {
+      position: relative;
+      height: 250px;
+      width: 250px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+    .circular-progress1:before {
+      content: "";
+      position: absolute;
+      height: 84%;
+      width: 84%;
+      background-color: #ffffff;
+      border-radius: 50%;
+    }
+    .value-container1 {
+      position: relative;
+      font-family: "Poppins", sans-serif;
+      font-size: 50px;
+      color: #000000;
+    }
+
+    .circular-progress2 {
+      position: relative;
+      height: 250px;
+      width: 250px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+    .circular-progress2:before {
+      content: "";
+      position: absolute;
+      height: 84%;
+      width: 84%;
+      background-color: #ffffff;
+      border-radius: 50%;
+    }
+    .value-container2 {
+      position: relative;
+      font-family: "Poppins", sans-serif;
+      font-size: 50px;
+      color: #000000;
+    }
+
+
+    .circular-progress3 {
+      position: relative;
+      height: 250px;
+      width: 250px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+    .circular-progress3:before {
+      content: "";
+      position: absolute;
+      height: 84%;
+      width: 84%;
+      background-color: #ffffff;
+      border-radius: 50%;
+    }
+    .value-container3 {
+      position: relative;
+      font-family: "Poppins", sans-serif;
+      font-size: 50px;
+      color: #000000;
+    }
+
+    .skills{
+      background:#ebebeb;
+    }
+    .skills .content{
+      padding: 40px 0;
+    }
+    .skills .skills-details{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .skills-details .text{
+      width: 50%;
+    }
+    .skills-details p{
+      color: #0E2431;
+      text-align: justify;
+    }
+    .skills .skills-details .experience{
+      display: flex;
+      align-items: center;
+      margin: 0 10px;
+    }
+    .skills-details .experience .num{
+      color: #0E2431;
+      font-size: 80px;
+    }
+    .skills-details .experience .exp{
+      color: #0E2431;
+      margin-left: 20px;
+      font-size: 18px;
+      font-weight: 500;
+      margin: 0 6px;
+    }
+    .skills-details .boxes{
+      width: 45%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .skills-details .box{
+      width: calc(100% / 2 - 20px);
+      margin: 20px 0;
+    }
+    .skills-details .boxes .topic{
+      font-size: 20px;
+      color: #000000;
+    }
+    .skills-details .boxes .per{
+      font-size: 60px;
+      color: #000000;
+    }
+
+      /*Works*/
+      /* Slideshow container */
+      .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+      }
+
+      /* Next & previous buttons */
+      .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+
+      /* Position the "next button" to the right */
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      /* On hover, add a black background color with a little bit see-through */
+      .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+      }
+
+      /* Caption text */
+      .text1 {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+      }
+      /* Number text (1/3 etc) */
+      .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+      }
+
+      /* The dots/bullets/indicators */
+      .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+
+      .active, .dot:hover {
+        background-color: #717171;
+      }
+
+      /* Fading animation */
+      .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+      }
+
+      /* On smaller screens, decrease text size */
+      @media only screen and (max-width: 300px) {
+        .prev, .next,.text {font-size: 11px}
+      }
+
+      .btn {
+        border: 2px solid black;
+        background-color: transparent;
+        color: black;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      /* Green */
+      #success {
+        border-color: #e67403;
+        color: #e67403;
+      }
+
+      #success:hover {
+        background-color: #e67403;
+        color: white;
+      }
+</style>
+<body>
+    <!--Navigation Bar-->
+
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <label class="logo" style="font-family: Goldman; font-size: 70px; font-weight: bolder;">A<span style="color: orangered;">V</span>N</label>
+            <ul style="font-family: 'Michroma', sans-serif; font-weight: bold;">
+                <li><a href=#home>home</a></li>
+                <li><a href=#about>about</a></li>
+                <li><a href=#service>services</a></li>
+                <li><a href=#skills>expertise</a></li>
+                <li><a href=#works>works</a></li>
+                <li><a href=#contacts>contacts</a></li>
+            </ul>
+        </nav>
+
+
+    <!--Header Page-->
+        <img src="images/myMain7.jpg" alt=""  id="home" name="home" style="width: 100%; height: 50%;"> 
+            
+        <div class="myPage">
+            <h1 style="font-family: 'Michroma', sans-serif; font-size: 60px;">I am <span class="auto-input" style="color: orangered; font-weight: bold;"></span></h1>
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 35px; color: black;">Welcome to my official Web Portfolio.  </p><br/>
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 25px; color: black;">explore. <span style="color: orangered;">create</span>. improve.</p><br/>
+            <button style="border: none;"><a class="btn" id="success"href=#about >Explore More</a></button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <script>
+            var typed = new Typed(".auto-input",{
+            strings:["Arvin Non", " a Web Developer", "a Web Designer", "a Photographer"],
+            typeSpeed: 100,
+            backSpeed: 100,
+            loop: true
+            });
+        </script>
+    
+    
+    <!--About Page-->
+        <div class="wrapper" id="about" name="about" style="background-image: url(images/about.jpg);">
+            <div class="row">
+                <div class="image-section">
+                    <img src="images/myPic.png" alt="">
+                </div>
+                <div class="content">
+                    <h1 style="font-family: 'Michroma', sans-serif; font-size: 60px; color: orangered; font-weight: 1000;text-shadow: 2px 2px #000000;">know about <br/>me.</h1>
+                    <p style="text-align: justify;font-family: 'Montserrat', sans-serif; font-size: 16px; color: #000000;">My desire to live a life of creation and address people's
+                        actual technical demands drove me to pursue a  Web Development
+                        course. My goal is to constantly find a way to balance reality 
+                        with aesthetics while also boosting interpersonal interactions.
+                        <br/><br/>I study Information Technology at Holy Angel University. 
+                        With three years of experience in web programming and web 
+                        designing.
+                        <br/><br/><br/>
+                        <button style="border: none;"><a class="btn" id="success" href="./files/Arvin Non.pdf" download="Arvin Non">Download Resume<i></i></a></button>
+                    </p>    
+                </div>
+            </div>
+        </div>
+
+    <!--Services Page-->
+    <section style="background-image: url(images/service.jpg);" >
+        <div class="row" id="service"> 
+          <h2 class="section-heading" style="font-family: 'Michroma', sans-serif; font-size: 60px; color: orangered; font-weight: 1000; text-shadow: 2px 2px #000000;" >how do i <br/>work?</h2>
+        </div>
+        <div class="row" style="font-family: Montserrat;">
+          <div class="column">
+            <div class="card">
+              <div class="icon-wrapper">
+                <i class="fas fa-hammer"></i>
+              </div>
+              <h3>explore</h3>
+              <p style="text-align: justify;">
+                  I like to start at the beginning and asking a few questions to get a sense of who are my client is and how we can come up with a strategy that
+                  meets their needs and creates a user-friendly experience. To design a personalized solution for them, I like to have a comprehensive grasp of 
+                  who they are.
+              </p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <div class="icon-wrapper">
+                <i class="fas fa-brush"></i>
+              </div>
+              <h3>create</h3>
+              <p style="text-align: justify;">
+                  I collaborate with my client to create a design that not only aesthetic looks but also works perfectly. I'll spend as much time as it takes to perfect a concept before 
+                  submitting it to my client. My goal is to provide my clients with a long-lasting web presence that will survive the passing of time.
+              </p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <div class="icon-wrapper">
+                <i class="fas fa-wrench"></i>
+              </div>
+              <h3>improve</h3>
+              <p style="text-align: justify;">
+                  All of my works are built from the ground up, allowing me to provide my clients with totally unique products. 
+                  I can have complete control over all areas of a project because I am both a designer and a developer, so nothing gets lost in translation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <br/>
+      <br/>
+      <br/>
+      <!--Skills Page -->
+      <div class="skills" id="skills" style="padding-left: 10%; background-image: url(images/expertise.jpg);">
+        <div class="skills-details">
+            <div class="text">
+                    <div class="topic" style="font-family: 'Orbitron', sans-serif; font-size: 70px; font-weight: 1000;"><b>create something with me that </b><br/"> 
+                    <span style="color: orangered; background-color: transparent;">matters.</span>
+                    </div>
+            </div>
+          
+            <div class="boxes" style="font-family: 'Montserrat'; margin-right: 10%; font-weight: 300;" >
+        
+                <div class="valueContainer1">
+                  <br/>
+                  <br/>
+                  <br/>
+                    <h1 style="font-size: 150%; text-align: center;">WEB DESIGNING</h1>
+                    <div class="circular-progress">
+                      <div class="value-container">0%</div>
+                    </div>
+                  </div>
+              
+                  <div class="container1" style="margin-left: 10x;">
+                    <br/>
+                    <br/>
+                    <br/>
+                    <h1 style="font-size: 150%; text-align: center;">PHOTOGRAPHY</h1>
+                      <div class="circular-progress1">
+                        <div class="value-container1">0%</div>
+                      </div>
+                  </div>
+                  <br/>
+                  <br/>
+                  <div class="container1">
+                    <h1 style="font-size: 150%; text-align: center;">WEB DEVELOPMENT</h1>
+                      <div class="circular-progress2">
+                        <div class="value-container2">0%</div>
+                      </div>
+                  </div>
+              
+                  <div class="container1">
+                    <h1 style="font-size: 150%; text-align: center;">GRAPHIC DESIGN</h1>
+                      <div class="circular-progress3">
+                        <div class="value-container3">0%</div>
+                      </div>
+                  </div>
+            </div>
+          </div>
+
+
+            <script>
+                //first pie
+                let progressBar = document.querySelector(".circular-progress");
+                let valueContainer = document.querySelector(".value-container");
+            
+                let progressValue = 0;
+                let progressEndValue = 75;
+                let speed = 50;
+            
+                let progress = setInterval(() => {
+                progressValue++;
+                valueContainer.textContent = `${progressValue}%`;
+                progressBar.style.background = `conic-gradient(
+                  #E04D01 ${progressValue * 3.6}deg,
+                  #DDDDDD ${progressValue * 3.6}deg
+                )`;
+                if (progressValue == progressEndValue) {
+                    clearInterval(progress);
+                }
+                }, speed);
+            
+                //second pie
+                let progressBar1 = document.querySelector(".circular-progress1");
+                let valueContainer1 = document.querySelector(".value-container1");
+            
+                let progressValue1 = 0;
+                let progressEndValue1 = 80;
+                let speed1 = 50;
+            
+                let progress1 = setInterval(() => {
+                progressValue1++;
+                valueContainer1.textContent = `${progressValue1}%`;
+                progressBar1.style.background = `conic-gradient(
+                  #E04D01  ${progressValue * 3.6}deg,
+                  #DDDDDD ${progressValue * 3.6}deg
+                )`;
+                if (progressValue1 == progressEndValue1) {
+                    clearInterval(progress1);
+                }
+                }, speed1);
+            
+                //third pie
+                let progressBar2 = document.querySelector(".circular-progress2");
+                let valueContainer2 = document.querySelector(".value-container2");
+            
+                let progressValue2 = 0;
+                let progressEndValue2 = 70;
+                let speed2 = 50;
+            
+                let progress2 = setInterval(() => {
+                progressValue2++;
+                valueContainer2.textContent = `${progressValue2}%`;
+                progressBar2.style.background = `conic-gradient(
+                    #E04D01 ${progressValue * 3.6}deg,
+                    #DDDDDD ${progressValue * 3.6}deg
+                )`;
+                if (progressValue2 == progressEndValue2) {
+                    clearInterval(progress2);
+                }
+                }, speed2);
+            
+                 //fourth pie
+                 let progressBar3 = document.querySelector(".circular-progress3");
+                let valueContainer3 = document.querySelector(".value-container3");
+            
+                let progressValue3 = 0;
+                let progressEndValue3 = 72;
+                let speed3 = 50;
+            
+                let progress3 = setInterval(() => {
+                progressValue3++;
+                valueContainer3.textContent = `${progressValue3}%`;
+                progressBar3.style.background = `conic-gradient(
+                  #E04D01 ${progressValue * 3.6}deg,
+                  #DDDDDD ${progressValue * 3.6}deg
+                )`;
+                if (progressValue3 == progressEndValue3) {
+                    clearInterval(progress3);
+                }
+                }, speed3);
+               </script>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <!--Works Page-->
+        <h2 class="section-heading" style="font-family: 'Michroma', sans-serif; font-size: 60px; color: orangered; font-weight: 1000; margin-left: 10%; text-shadow: 2px 2px #000000;" id="works"  >my sample<br/>works.</h2>
+      
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="images/graphics.jpg" style="width:100%">
+            <div class="text1" style="color: black; font-size: 300%;"><a class="btn" id="success"href="graphics.html" style="font-family: Arial;">See Projects</a></div>
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="images/websites.jpg" style="width:100%">
+            <div class="text1" style="color: black; font-size: 300%;"><a class="btn" id="success"href="website.html" style="font-family: Arial;">See Projects</a></div>
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="images/photo.jpg" style="width:100%">
+            <div class="text1" style="color: black; font-size: 300%;"><a class="btn" id="success"href="photo.html" style="font-family: Arial;">See Projects</a></div>
+          </div>
+          
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+          
+          </div>
+          <br>
+          
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+          </div>
+      
+      <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+      </script>
+      
+    
+
+      <!--Contact Page-->  
+      <div id="contacts" style="background-image: url(images/contact.jpg);">
+          <h1 class="header2" style="font-family: 'Michroma', sans-serif; font-size: 60px; color: orangered; font-weight: 1000; text-align: left; padding-left: 15%; text-shadow: 2px 2px #000000;">get in <br/>touch.</h1>
+          <br/>
+          <br/>
+          <div style="padding-left: 15%;">
+            <h2 style="font-family: 'Michroma', sans-serif; font-size: 60px; ">mailing address</h2>
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 20px; color: black;">1516 15Street. Lakandula, <br/> Mabalacat City, Pampanga</br></p>
+            <h2 style="font-family: 'Michroma', sans-serif; font-size: 60px; ">email address</h2>
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 20px; color: black;">arvinnon3@gmail.com</p>
+            <h2 style="font-family: 'Michroma', sans-serif; font-size: 60px; "> contact number</h2>
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 20px; color: #000000;">(+63) 920 813 8225</p>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+          </div>
+        </div> 
+
+        <!--Footer Page-->
+        <footer>
+          <p style="background-color: #777; padding: 10px; text-align: center; color: white; font-family: 'Montserrat', sans-serif; font-size: large;">© Arvin Non. 2022 <br/>All Rights Reserved.</p>
+        </footer>
+   
+    
+    
+</body>
+</html>

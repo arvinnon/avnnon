@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!--Fonts-->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat+Subrayada:wght@400;700&family=Montserrat:wght@500;900&family=Orbitron:wght@500&family=Poppins:wght@700&family=Russo+One&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat+Subrayada:wght@400;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Orbitron:wght@500&family=Poppins:wght@700&family=Russo+One&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@700&family=Michroma&family=Montserrat+Subrayada:wght@400;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Orbitron:wght@500&family=Poppins:wght@700&family=Russo+One&display=swap" rel="stylesheet">
+      <!--Icons-->
+      <script src="https://kit.fontawesome.com/f72aa75942.js" crossorigin="anonymous"></script>
+    <title>Arvin Non | Websites</title>
+    <link rel="icon" href="images/myLogo.png">
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+        
+    }
+    html {
+        scroll-behavior: smooth;
+        background-color: #EBEBEB;
+    }
+    /*Navigation Bar
+    body {
+        font-family: montserrat;
+    }
+    */
+    nav {
+        background: #ebebeb97;
+        height: 60px;
+        width: 100%;
+        position: fixed;
+        overflow: hidden;
+        z-index: 2;
+    }
+    label.logo {
+        color: black;
+        font-size: 35px;
+        line-height: 60px;
+        padding: 0 100px;
+        font-weight: bold;
+    }
+    nav ul {
+        float: right;
+        margin-right: 20px;
+    }
+    nav ul li {
+        display: inline-block;
+        line-height: 60px;
+        margin: 0 5px;
+    }
+    nav ul li a{
+        color: black;
+        font-size: 18px;
+        border-radius: 3px;
+        padding: 7px 13px;
+        text-transform: lowercase;
+    }
+    a:hover{
+      color: orange;
+      transition: .5s;   
+    }
+    .checkbtn{
+        font-size: 30px;
+        color: white;
+        float: right;
+        line-height: 80px;
+        margin-right: 40px;
+        cursor: pointer;
+        display: none;
+    }  
+    #check {
+        display: none;
+    }
+    nav img {
+        width: 100%;
+        height: auto;
+    }
+    @media (max-width: 952px) {
+        label.logo{
+            font-size: 30px;
+            padding-left: 50px;
+        } 
+        nav ul li a {
+            font-size: 16px;
+        }
+    }
+    @media (max-width: 858px) {
+        .checkbtn {
+            display: block;
+        }
+        ul {
+            position:fixed;
+            width: 100%;
+            height: 100vh;
+            background: #2c3e50;
+            top: 80px;
+            left: -100%;
+            text-align: center;
+            transition: all .5s;
+
+        }
+        nav ul li {
+            display: block;
+            margin: 50px 0;
+            line-height: 30px;
+        }
+        nav ul li a {
+            font-size: 20px;
+        }
+        a:hover, a.active{
+            background: none;
+            color: #ffac37;
+        }
+        #check:checked ~ ul {
+            left: 0;
+
+        }
+    }
+
+
+    main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 80%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-areas: "cover content";
+    box-shadow:-2px 0px 33px 0px rgba(0,0,0,0.75);
+}
+
+.cover{
+    grid-area: cover;
+    height: 80vh;
+    background-image: url('images/web1.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+.cover1{
+    grid-area: cover;
+    height: 80vh;
+    background-image: url('images/web2.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+.content{
+    grid-area: content;
+    background:#efefef;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+}
+.nav{
+    margin: 10px 20px;
+    height: 40px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    color: gray;
+}
+.content-body{
+    display: flex;
+    flex-direction: row;
+}
+.pages{
+    width: 20%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 10px;
+    color: gray;
+    position: relative;
+    transform: translateY(38px);
+}
+.pages span{
+    margin-top: 15px;
+}
+.black-label{
+    width: 80%;
+}
+.black-label p{
+    font-size: 13px;
+    color: gray;
+    width: 70%;
+}
+.title{
+    font-size: 64px;
+}
+.prix{
+    margin: 50px 0px;
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+    border-left: 4px solid rgb(255,177,33);
+}
+.prix span{
+    padding-left: 10px;
+}
+.crt{
+    color: gray;
+    left: 2px;
+    border-bottom: 1px solid rgb(177,177,177);
+}
+.active{
+    color: black;
+    position: relative;
+    transform: translateX(60px);
+}
+.active::before{
+    position: absolute;
+    content: "";
+    display: block;
+    width: 67px;
+    right: 117%;
+    top: 45%;
+    background-color: #555;
+    height: .2em;
+    min-height: 1px;
+    z-index: 1;
+}
+.btn {
+        border: 2px solid black;
+        background-color: transparent;
+        color: black;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      /* Green */
+      #success {
+        border-color: #e67403;
+        color: #e67403;
+      }
+
+      #success:hover {
+        background-color: #e67403;
+        color: white;
+      }
+
+
+
+
+</style>
+<body>
+    <!--Navigation Bar-->
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo" style="font-family: Goldman; font-size: 70px; font-weight: bolder;">A<span style="color: orangered;">V</span>N</label>
+        <ul style="font-family: 'Michroma', sans-serif; font-weight: bold;">
+            <li><a href=index.html>home</a></li>
+            <li><a href=index.html>about</a></li>
+            <li><a href=index.html>services</a></li>
+            <li><a href=index.html>expertise</a></li>
+            <li><a href=index.html>works</a></li>
+            <li><a href=index.html>contacts</a></li>
+        </ul>
+    </nav>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+<h2 class="section-heading" style="font-family: 'Michroma', sans-serif; font-size: 60px; color: orangered; font-weight: 1000; margin-left: 35%;  text-shadow: 2px 2px #000000;" id="works"  >WEBSITES</h2>
+    <main>
+        <div class="container">
+             <div class="cover1"></div>
+            <div class="content">
+                 <div class="nav">
+                    
+                 </div>
+                 <div class="content-body">
+                     <div class="pages">
+                         <span class="active"><b style="font-size: 15px; font-family: montserrat;">01</b></span>
+                     </div>
+                     <div class="black-label">
+                         <span class="title" style="font-family: Montserrat;"><b>IMMFI</b></span>
+                         <p style="text-align: justify; font-family: Montserrat; font-size: 15px; color: black">
+                            In this project, the team creates a website on the institution that responds to childhood disability prevention, early detection and intervention. 
+                            This website can help the institution to improve their communication, markets its strength and build a solid, trusting reputation within its community.
+                        </p>
+            
+                                <div class="prix">
+                                    <span><button style="border: none;"><a class="btn" id="success"  onclick="document.location='https://immfi.org/'"  >Visit the Website</a></button></span>
+                                </div>
+                        </div>
+                    </div> 
+             </div>
+         </div>  
+     </main> 
+
+     <main>
+        <div class="container">
+             <div class="cover"></div>
+            <div class="content">
+                 <div class="nav">
+                 </div>
+                 <div class="content-body">
+                     <div class="pages">
+                         <span class="active"><b style="font-size: 15px; font-family: montserrat;">02</b></span>
+                     </div>
+                     <div class="black-label">
+                         <span class="title" style="font-family: Montserrat;font-weight: 900;"><b>Favolosa PH</b></span>
+                         <p style="text-align: justify; font-family: Montserrat; font-size: 15px; color: black">
+                            In this collaborative project, the team design a website and help the clients to create an online presence and enhance customer interaction. 
+                            In the same way, Search Engine Optimization was also considered in this project, which gives the clients the power to be the answers 
+                            to potential customers’ needs.
+                        </p>
+                                <div class="prix">
+                                    <span><button style="border: none;"><a class="btn" id="success"  onclick="document.location='https://favolosaph.com/;'"  >Visit the Website</a></button></span>
+                                </div>
+                        </div>
+                    </div> 
+             </div>
+         </div> 
+       
+     </main>
+     <div class="text1" style="color: black; font-size: 300%;"><a class="btn" id="success"href="index.html" style="font-family: Arial; margin-left: 44%;">Return to Homepage</a></div>
+    
+
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     
+     <footer>
+        <p style="background-color: #777; padding: 10px; text-align: center; color: white; font-family: 'Montserrat', sans-serif; font-size: large;">© Arvin Non. 2022 <br/>All Rights Reserved.</p>
+      </footer>
+ 
+    
+</body>
+</html>
